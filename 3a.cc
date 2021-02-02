@@ -1,3 +1,11 @@
+./waf --run scratch/Program3 > cwnd.dat 2>&1
+gnuplot
+gnuplot> set terminal png size 640,480
+gnuplot> set output "cwnd.png"
+
+gnuplot> plot "cwnd.dat" using 1:2 title 'Congestion Window' with linespoints
+gnuplot> exit
+
 //ethernet lan
 #include "ns3/core-module.h"
 #include "ns3/network-module.h"
